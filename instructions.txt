@@ -1,0 +1,32 @@
+# instructions.txt
+# Sample RISC-V instructions for our simulator
+#
+# NOTE: All registers (x0-x31) start at 0. This project only has
+# R-Type and S-Type instructions, there is no "li" or "addi" to load
+# a starting value into a register. So if you want add/sub/etc to
+# produce interesting (non-zero) results, use the "Set Register" box
+# in the GUI first to set values like x1, x2, etc. before running.
+#
+# Format for R-Type:   op  rd  rs1  rs2
+# Format for S-Type:   op  rs2  offset  rs1   (means mem[rs1+offset] = rs2)
+
+add x8 x1 x2
+sub x9 x2 x1
+and x10 x1 x3
+or x11 x1 x3
+xor x12 x1 x3
+sll x13 x3 x4
+srl x14 x2 x4
+slt x15 x1 x2
+slt x16 x2 x1
+add x17 x8 x9
+sub x18 x9 x8
+and x19 x10 x11
+or x20 x12 x13
+sw x5 0 x6
+sw x1 4 x6
+sh x2 8 x6
+sb x3 12 x6
+add x21 x17 x18
+sub x22 x20 x19
+sw x21 16 x6
